@@ -39,6 +39,7 @@ body {
 .board h1 {
   color: #eee;
 
+  color: green;
   margin-bottom: 16px;
 }
 

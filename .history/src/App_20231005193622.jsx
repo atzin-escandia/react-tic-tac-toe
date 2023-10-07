@@ -6,13 +6,14 @@ const TURNS = {
   o: "o",
 };
 
-const COMBINATIONS = {
-  0: [1, 2, 3],
-  1: [1, 4, 7],
-  2: [2, 5, 8],
-  3: [3, 6, 9],
-  4: [1, 5, 9],
-};
+const Combinations = {
+  [1,2,3],
+  [1,4,7],
+  [2,5,8],
+  [3,6,9],
+  [1,5,9],
+}
+
 
 function App() {
   const initialState = Array(9).fill(null);
@@ -26,15 +27,10 @@ function App() {
       return;
     }
     console.log(board[index]);
-
     if (board[index] === null) {
       board[index] = turn ? "x" : "o";
       setTurn(!turn);
     }
-
-    board.forEach((_, index) => {
-      index;
-    });
   };
 
   const Square = ({ children, updateBoard, index }) => {

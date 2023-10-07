@@ -32,9 +32,7 @@ function App() {
       setTurn(!turn);
     }
 
-    board.forEach((_, index) => {
-      index;
-    });
+    board.forEach((e) => {});
   };
 
   const Square = ({ children, updateBoard, index }) => {

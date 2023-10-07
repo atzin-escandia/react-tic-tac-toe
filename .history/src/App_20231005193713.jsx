@@ -26,15 +26,10 @@ function App() {
       return;
     }
     console.log(board[index]);
-
     if (board[index] === null) {
       board[index] = turn ? "x" : "o";
       setTurn(!turn);
     }
-
-    board.forEach((_, index) => {
-      index;
-    });
   };
 
   const Square = ({ children, updateBoard, index }) => {

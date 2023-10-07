@@ -52,6 +52,10 @@ function App() {
           return <Square key={index} index={index}></Square>;
         })}
       </section>
+      <section>
+        <h1>x : </h1>
+        <h1>o</h1>
+      </section>
     </main>
   );
 }
