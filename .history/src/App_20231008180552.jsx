@@ -3,7 +3,6 @@ import "./index.css";
 import confetti from "canvas-confetti";
 import { ALL_TURNS, WINNER_COMBOS } from "./constants";
 import Modal from "./Modal";
-import { checkWinner } from "./boardLogic";
 
 function App() {
   const initialState = Array(9).fill(null);

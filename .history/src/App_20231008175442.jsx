@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./index.css";
 import confetti from "canvas-confetti";
 import { ALL_TURNS, WINNER_COMBOS } from "./constants";
-import Modal from "./Modal";
-import { checkWinner } from "./boardLogic";
 
 function App() {
   const initialState = Array(9).fill(null);
@@ -20,6 +18,16 @@ function App() {
     setRandomTurn(initialStateTurn);
   };
 
+  const checkWinner = (board) => {
+    for (const combo of WINNER_COMBOS) {
+      const [a, b, c] = combo;
+      if (board[a] && board[a] === board[b] && board[b] === board[c]) {
+        return board[a];
+      }
+    }
+    return null;
+  };
+
   const updateBoard = (index) => {
     const newBoard = [...board];
 
@@ -27,6 +35,8 @@ function App() {
     newBoard[index] = turn ? randomTurn[0] : randomTurn[1];
     setTurn(!turn);
     setBoard(newBoard);
+
+    newBoard.forEach((_, index) => index);
 
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
@@ -57,7 +67,6 @@ function App() {
           );
         })}
       </section>
-      <Modal restartGame={restartGame} winner={winner} />
     </main>
   );
 }
